@@ -28,8 +28,8 @@
   "scripts": {
     "build": "yarn lint && rm -rf dist/* && babel-node scripts/build.js && babel-node scripts/build-locale.js",
     "serve": "rollup -c scripts/serve.js --watch",
-    "test": "jest --config test/unit/jest.conf.js --coverage",
-    "lint": "eslint --ext .js,.vue src test/unit/specs",
+    "test": "TZ='UTC' jest --config test/unit/jest.conf.js --coverage",
+    "lint": "eslint --fix --ext .js,.vue src test/unit/specs",
     "prepublishOnly": "yarn build"
   },
   "pre-commit": [

@@ -1,4 +1,5 @@
 import en from '../locale/translations/en'
+import objectAssign from '../utils/object-assign'
 
 const utils = {
   /**
@@ -234,10 +235,6 @@ const utils = {
   }
 }
 
-export const makeDateUtils = useUtc => ({...utils, useUtc})
+export const makeDateUtils = function (Utc) { return objectAssign(utils, {useUtc: Utc}) }
 
-export default {
-  ...utils
-}
-// eslint-disable-next-line
-;
+export default objectAssign({}, utils)

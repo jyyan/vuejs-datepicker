@@ -40,6 +40,8 @@
 </template>
 <script>
 import { makeDateUtils } from '../utils/DateUtils'
+import objectAssign from '../utils/object-assign'
+
 export default {
   props: {
     selectedDate: Date,
@@ -90,7 +92,7 @@ export default {
         if (typeof this.inputClass === 'string') {
           return [this.inputClass, 'form-control'].join(' ')
         }
-        return {'form-control': true, ...this.inputClass}
+        return objectAssign({'form-control': true}, this.inputClass)
       }
       return this.inputClass
     }
