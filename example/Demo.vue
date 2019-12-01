@@ -179,7 +179,7 @@
       <h3>Translations</h3>
       <h5>{{ languages[language].language }} datepicker</h5>
 
-      <datepicker :language="languages[language]" format="d MMMM yyyy"></datepicker>
+      <datepicker :language="languages[language]" :format="format"></datepicker>
       <code>
           &lt;datepicker :language="languages.{{ language }}"&gt;&lt;/datepicker&gt;
       </code>
@@ -265,7 +265,7 @@ export default {
   data () {
     return {
       styleInput: null,
-      format: 'd MMMM yyyy',
+      format: 'yyyy-MM-dd',
       disabledDates: {},
       openDate: null,
       disabledFn: {
@@ -287,7 +287,7 @@ export default {
       state: state,
       vModelExample: null,
       languages: lang,
-      language: 'en'
+      language: 'zh'
     }
   },
   computed: {
